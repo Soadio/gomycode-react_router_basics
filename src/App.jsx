@@ -16,6 +16,7 @@ function App() {
     const movie = {
       title: form.title.value,
       description: form.description.value,
+      embedUrl: form.embedUrl.value,
       posterUrl: form.posterUrl.value,
       rating: parseInt(form.rating.value),
     };
@@ -36,6 +37,7 @@ function App() {
     const filteredMovies = movies.filter((movie) => {
       return (
         movie.title.toLowerCase().includes(searchKeyword.toLowerCase()) ||
+        // eslint-disable-next-line
         movie.rating == searchKeyword
       );
     });
@@ -57,6 +59,12 @@ function App() {
             placeholder="Movie description"
             required
           ></textarea>
+          <input
+            name="embedUrl"
+            type="text"
+            placeholder="Movie embed url"
+            required
+          />
           <input
             name="posterUrl"
             type="text"
