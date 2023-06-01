@@ -5,10 +5,14 @@ import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MoviePage from "./Movie";
 
+//decalare route
+
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/:movie", element: <MoviePage /> },
 ]);
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
